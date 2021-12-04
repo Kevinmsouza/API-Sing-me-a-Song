@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import recommendationsRouter from './routers/recommendationsRouter';
+import recommendationsRouter from './routers/recommendationsRouter.js';
 
 const app = express();
 app.use(express.json());

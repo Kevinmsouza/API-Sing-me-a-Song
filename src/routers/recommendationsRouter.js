@@ -1,5 +1,8 @@
 import { Router } from 'express';
+import * as recommendationsController from '../controllers/recommendationsController.js';
 
-const recommendationsRouter = new Router();
+const router = new Router();
 
-export default recommendationsRouter;
+router.post('', recommendationsController.AddSong);
+
+export default router;
