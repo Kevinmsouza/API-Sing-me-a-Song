@@ -10,6 +10,12 @@ function validateNewSong(song) {
     return !!schema.validate(song).error;
 }
 
+function validateId(id) {
+    const schema = Joi.number().integer().min(1).required();
+    return !!schema.validate(id).error;
+}
+
 export {
     validateNewSong,
+    validateId,
 };

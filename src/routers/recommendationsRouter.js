@@ -4,5 +4,6 @@ import * as recommendationsController from '../controllers/recommendationsContro
 const router = new Router();
 
 router.post('', recommendationsController.AddSong);
+router.post('/:id/upvote', recommendationsController.upVote);
 
 export default router;
