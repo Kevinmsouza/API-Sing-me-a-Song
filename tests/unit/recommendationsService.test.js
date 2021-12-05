@@ -104,8 +104,16 @@ describe('randomSong', () => {
     });
 });
 
-describe('function', () => {
-    it('Returns something', async () => {
-
+describe('listTopSongs', () => {
+    it('Returns the top 1 song', async () => {
+        const body = {
+            id: 1,
+            name: 'test Song',
+            youtubeLink: 'test Link',
+            score: 100,
+        };
+        jest.spyOn(recommendationsRepository, 'listTopSongs').mockImplementationOnce(() => [body]);
+        const result = await sut.listTopSongs({ amount: 1 });
+        expect(result).toEqual([body]);
     });
 });

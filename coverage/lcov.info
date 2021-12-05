@@ -74,12 +74,12 @@ FN:16,decreaseScore
 FN:28,randomSong
 FN:37,listTopSongs
 FNF:5
-FNH:4
+FNH:5
 FNDA:1,newSong
 FNDA:2,increaseScore
 FNDA:3,decreaseScore
 FNDA:3,randomSong
-FNDA:0,listTopSongs
+FNDA:1,listTopSongs
 DA:5,1
 DA:9,2
 DA:10,2
@@ -97,9 +97,9 @@ DA:30,3
 DA:31,1
 DA:33,3
 DA:34,2
-DA:38,0
+DA:38,1
 LF:18
-LH:17
+LH:18
 BRDA:10,0,0,1
 BRDA:10,0,1,1
 BRDA:18,1,0,1
