@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1638744196674" clover="3.2.0">
-  <project timestamp="1638744196674" name="All files">
-    <metrics statements="41" coveredstatements="19" conditionals="14" coveredconditionals="7" methods="12" coveredmethods="4" elements="67" coveredelements="30" complexity="0" loc="41" ncloc="41" packages="4" files="4" classes="4"/>
+<coverage generated="1638745116257" clover="3.2.0">
+  <project timestamp="1638745116257" name="All files">
+    <metrics statements="41" coveredstatements="24" conditionals="14" coveredconditionals="11" methods="12" coveredmethods="5" elements="67" coveredelements="40" complexity="0" loc="41" ncloc="41" packages="4" files="4" classes="4"/>
     <package name="src">
       <metrics statements="6" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
       <file name="database.js" path="/home/kevin/Projetos/SingMeASongAPI/src/database.js">
@@ -18,8 +18,8 @@
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="recommendationsError.js" path="/home/kevin/Projetos/SingMeASongAPI/src/errors/recommendationsError.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.repositories">
@@ -44,9 +44,9 @@
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="18" coveredstatements="12" conditionals="10" coveredconditionals="6" methods="5" coveredmethods="3"/>
+      <metrics statements="18" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="4"/>
       <file name="recommendationsService.js" path="/home/kevin/Projetos/SingMeASongAPI/src/services/recommendationsService.js">
-        <metrics statements="18" coveredstatements="12" conditionals="10" coveredconditionals="6" methods="5" coveredmethods="3"/>
+        <metrics statements="18" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="4"/>
         <line num="5" count="1" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
@@ -59,11 +59,11 @@
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="34" count="0" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="30" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="2" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
       </file>
     </package>

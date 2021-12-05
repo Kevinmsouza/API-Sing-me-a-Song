@@ -71,6 +71,39 @@ describe('decreaseScore', () => {
     });
 });
 
+describe('randomSong', () => {
+    it('Returns an RecommendationsError for no songs avalaible', async () => {
+        jest.spyOn(recommendationsRepository, 'getRandomSong').mockImplementationOnce(() => []);
+        jest.spyOn(recommendationsRepository, 'getRandomSong').mockImplementationOnce(() => []);
+        const promise = sut.randomSong();
+        await expect(promise).rejects.toThrowError(RecommendationsError);
+    });
+    it('Returns a song with more than 10 score', async () => {
+        const body = {
+            id: 1,
+            name: 'test Song',
+            youtubeLink: 'test Link',
+            score: 15,
+        };
+        jest.spyOn(global.Math, 'random').mockImplementationOnce(() => 0.31);
+        jest.spyOn(recommendationsRepository, 'getRandomSong').mockImplementationOnce(() => [body]);
+        const result = await sut.randomSong();
+        expect(result).toEqual([body]);
+    });
+    it('Returns a song with less than 10 score', async () => {
+        const body = {
+            id: 1,
+            name: 'test Song',
+            youtubeLink: 'test Link',
+            score: 5,
+        };
+        jest.spyOn(global.Math, 'random').mockImplementationOnce(() => 0.3);
+        jest.spyOn(recommendationsRepository, 'getRandomSong').mockImplementationOnce(() => [body]);
+        const result = await sut.randomSong();
+        expect(result).toEqual([body]);
+    });
+});
+
 describe('function', () => {
     it('Returns something', async () => {
 
