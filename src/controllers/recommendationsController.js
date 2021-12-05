@@ -45,8 +45,23 @@ async function downVote(req, res) {
     }
 }
 
+async function randomSong(req, res) {
+    try {
+        const result = await recommendationsService.randomSong();
+        res.status(200).send(result);
+    } catch (error) {
+        if (error.name === 'RecommendationsError') {
+            return res.status(204).send(error.message);
+        }
+        // eslint-disable-next-line no-console
+        console.log(error);
+        res.sendStatus(500);
+    }
+}
+
 export {
     AddSong,
     upVote,
     downVote,
+    randomSong,
 };

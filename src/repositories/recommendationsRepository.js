@@ -36,9 +36,18 @@ async function deleteSong({ id }) {
     return result.rowCount > 0;
 }
 
+async function getRandomSong({ onlyGoods }) {
+    let query = 'SELECT * FROM songs';
+    if (onlyGoods) query += ' WHERE score > 10';
+    query += ' ORDER BY RANDOM() LIMIT 1;';
+    const result = await connection.query(query);
+    return result.rows;
+}
+
 export {
     newSong,
     checkSongById,
     changeScore,
     deleteSong,
+    getRandomSong,
 };

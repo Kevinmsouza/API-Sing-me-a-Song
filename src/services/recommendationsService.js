@@ -25,8 +25,18 @@ async function decreaseScore({ id }) {
     return recommendationsRepository.changeScore({ id, score: recommendation.score - 1 });
 }
 
+async function randomSong() {
+    let song = await recommendationsRepository.getRandomSong({ onlyGoods: Math.random() > 0.3 });
+    if (song.length === 0) {
+        song = await recommendationsRepository.getRandomSong({ onlyGoods: false });
+    }
+    if (song.length === 0) throw new RecommendationsError('No recommendations avalaible.');
+    return song;
+}
+
 export {
     newSong,
     increaseScore,
     decreaseScore,
+    randomSong,
 };
