@@ -34,9 +34,14 @@ async function randomSong() {
     return song;
 }
 
+async function listTopSongs({ amount }) {
+    return recommendationsRepository.listTopSongs({ amount });
+}
+
 export {
     newSong,
     increaseScore,
     decreaseScore,
     randomSong,
+    listTopSongs,
 };

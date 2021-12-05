@@ -44,10 +44,20 @@ async function getRandomSong({ onlyGoods }) {
     return result.rows;
 }
 
+async function listTopSongs({ amount }) {
+    const result = await connection.query(`
+        SELECT * FROM songs
+        ORDER BY score DESC
+        LIMIT $1
+    ;`, [amount]);
+    return result.rows;
+}
+
 export {
     newSong,
     checkSongById,
     changeScore,
     deleteSong,
     getRandomSong,
+    listTopSongs,
 };

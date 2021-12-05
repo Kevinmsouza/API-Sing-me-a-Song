@@ -59,9 +59,23 @@ async function randomSong(req, res) {
     }
 }
 
+async function topSongs(req, res) {
+    try {
+        const amount = Number(req.params.amount);
+        if (validateId(amount)) return res.sendStatus(400);
+        const result = await recommendationsService.listTopSongs({ amount });
+        res.status(200).send(result);
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+        res.sendStatus(500);
+    }
+}
+
 export {
     AddSong,
     upVote,
     downVote,
     randomSong,
+    topSongs,
 };
