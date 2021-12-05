@@ -13,7 +13,20 @@ async function increaseScore({ id }) {
     return recommendationsRepository.changeScore({ id, score: recommendation.score + 1 });
 }
 
+async function decreaseScore({ id }) {
+    const recommendation = await recommendationsRepository.checkSongById({ id });
+    if (!recommendation) {
+        throw new RecommendationsError('Recommendation does not exist.');
+    }
+    if (recommendation.score === -5) {
+        await recommendationsRepository.deleteSong({ id });
+        return {};
+    }
+    return recommendationsRepository.changeScore({ id, score: recommendation.score - 1 });
+}
+
 export {
     newSong,
     increaseScore,
+    decreaseScore,
 };

@@ -29,7 +29,24 @@ async function upVote(req, res) {
     }
 }
 
+async function downVote(req, res) {
+    try {
+        const id = Number(req.params.id);
+        if (validateId(id)) return res.sendStatus(400);
+        const result = await recommendationsService.decreaseScore({ id });
+        res.status(200).send(result);
+    } catch (error) {
+        if (error.name === 'RecommendationsError') {
+            return res.status(400).send(error.message);
+        }
+        // eslint-disable-next-line no-console
+        console.log(error);
+        res.sendStatus(500);
+    }
+}
+
 export {
     AddSong,
     upVote,
+    downVote,
 };

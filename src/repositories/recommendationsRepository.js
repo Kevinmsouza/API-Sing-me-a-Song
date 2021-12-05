@@ -28,8 +28,17 @@ async function changeScore({ id, score }) {
     return result.rows[0];
 }
 
+async function deleteSong({ id }) {
+    const result = await connection.query(`
+        DELETE FROM songs
+        WHERE id = $1
+    ;`, [id]);
+    return result.rowCount > 0;
+}
+
 export {
     newSong,
     checkSongById,
     changeScore,
+    deleteSong,
 };
