@@ -50,42 +50,36 @@ Response is the top *amount* recommendations. Response example for amount = 2:
 
 Response is the data of the posted body. Response example:
 ```json
-[
-  {
+{
     "id": 18,
     "name": "Bag Raiders - Not Over",
     "youtubeLink": "https://www.youtube.com/watch?v=xX3K2qSz6ew",
     "score": 0
-  }
-]
+}
 ```
 
 - #### `POST /recommendations/:id/upvote`
 Increases the score of recommendation by 1. <br>
 Response is the data of the upvoted recommendation. Response example for id = 18:
 ```json
-[
-  {
+{
     "id": 18,
     "name": "Bag Raiders - Not Over",
     "youtubeLink": "https://www.youtube.com/watch?v=xX3K2qSz6ew",
     "score": 1
-  }
-]
+}
 ```
 
 - #### `POST /recommendations/:id/downvote`
 Decreases the score of recommendation by 1. If a recommendation gets below -5 score, it is deleted from the DB <br>
 Response is the data of the downvoted recommendation (for deleted ones is a empty object). Response example for id = 18:
 ```json
-[
-  {
+{
     "id": 18,
     "name": "Bag Raiders - Not Over",
     "youtubeLink": "https://www.youtube.com/watch?v=xX3K2qSz6ew",
     "score": 0
-  }
-]
+}
 ```
 
 ### **Built with**
